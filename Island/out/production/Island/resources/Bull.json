@@ -1,0 +1,6 @@
+{
+  "weight" : 700,
+  "maxCountInLocation" : 10,
+  "speed" : 3,
+  "fullSatiety" : 100
+}
