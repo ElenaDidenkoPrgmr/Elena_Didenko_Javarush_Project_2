@@ -77,9 +77,7 @@ public class Island {
 
                             if (animal.getAlreadyMultiplied() == false) {
                                 List<Animal> oneChild = getChildWithSomebodyPartner(animal, mapsOnLocation[i][j].get(classPopulation));
-                                //if (oneChild != null) {
-                                    childsAnimalList.addAll(oneChild);
-                                //}
+                                childsAnimalList.addAll(oneChild);
                             }
                         }
                     }
@@ -200,7 +198,7 @@ public class Island {
 
                             if (animal.getSatiety() < fullSatiety) {
                                 Entity eatenEntity = getEatenEntity(animal, mapsOnLocation[i][j]);
-                                if (eatenEntity != null) {
+                                if (eatenEntity != null) { //null = nothing to eat
                                     String weightPropertyName = (eatenEntity.getClass().getSimpleName() + ".weight").toLowerCase(Locale.ROOT);
                                     double addedSatiety = InitialApplication.getDoubleAppProperties(weightPropertyName);
                                     if (animal instanceof Herbivore) {
@@ -208,10 +206,7 @@ public class Island {
                                     }
 
                                     double newSatiety = animal.getSatiety() + addedSatiety;
-                                    if (newSatiety > fullSatiety) {
-                                        newSatiety = fullSatiety;
-                                    }
-                                    animal.setSatiety(newSatiety);
+                                    animal.setSatiety((newSatiety>fullSatiety)?fullSatiety:newSatiety);
 
                                     mapsOnLocation[i][j].get(eatenEntity.getClass()).remove(eatenEntity);
                                 }
@@ -259,15 +254,13 @@ public class Island {
         try {
             Class<? extends Creator> creatorEntity = (Class<? extends Creator>) Class.forName("factory." + classPopulation.getSimpleName() + "Creator");
 
-            Method[] allMethodsInCreator = creatorEntity.getDeclaredMethods();
-            for (Method creator : allMethodsInCreator) {
-                if (creator.getName().equals("getInstance")) {
-                    for (int k = 0; k < count; k++) {
-                        result.add((T) ((Creator) creator.invoke(creatorEntity)).createEntity());
-                    }
-                }
+            for (int k = 0; k < count; k++) {
+                Method creator = creatorEntity.getMethod("getInstance", null);
+                result.add((T) ((Creator) creator.invoke(creatorEntity)).createEntity());
             }
         } catch (ClassNotFoundException | InvocationTargetException | IllegalAccessException | IOException e) {
+            throw new RuntimeException(e);
+        } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
         return result;
