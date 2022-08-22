@@ -13,7 +13,7 @@ public class InitialApplication {
     private Properties appProperties;
     private static InitialApplication instance;
     private InitialApplication() {
-        try (FileReader appPropertiesFile = new FileReader("Island/src/resources/app.properties");) {
+        try (FileReader appPropertiesFile = new FileReader("Elena_Didenko_Javarush_Project_2/Island/src/resources/app.properties");) {
 
             Properties propertiesFromFile = new Properties();
             propertiesFromFile.load(appPropertiesFile);

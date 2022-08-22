@@ -14,7 +14,7 @@ public class Eating {
 
     static {
         JsonMapper jsonMapper = new JsonMapper();
-        File fileFrom = new File("Island/src/resources/eatingMapTable.json");
+        File fileFrom = new File("Elena_Didenko_Javarush_Project_2/Island/src/resources/eatingMapTable.json");
 
         try {
             //eatingMap = jsonMapper.readValue(fileFrom,HashMap.class);

@@ -77,9 +77,9 @@ public class Island {
 
                             if (animal.getAlreadyMultiplied() == false) {
                                 List<Animal> oneChild = getChildWithSomebodyPartner(animal, mapsOnLocation[i][j].get(classPopulation));
-                                if (oneChild != null) {
+                                //if (oneChild != null) {
                                     childsAnimalList.addAll(oneChild);
-                                }
+                                //}
                             }
                         }
                     }
@@ -251,7 +251,7 @@ public class Island {
         boolean random = new Random().nextBoolean();
         if (random) {
             return createListEntity(animal.getClass(), 1);
-        } else return null;
+        } else return createListEntity(animal.getClass(), 0);//null;
     }
 
     private <T> List<T> createListEntity(Class<? extends Entity> classPopulation, int count) {
