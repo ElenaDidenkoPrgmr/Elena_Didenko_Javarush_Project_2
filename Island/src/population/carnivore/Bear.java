@@ -9,12 +9,4 @@ import java.util.Locale;
 
 @Data
 public class Bear extends Carnivore implements Animal {
-
-    @Override
-    public int move() {
-        String maxPopulationPropertyName = (this.getClass().getSimpleName() + ".speed").toLowerCase(Locale.ROOT);
-        return  InitialApplication.getIntAppProperties(maxPopulationPropertyName);
-
-    }
-
-    }
+}

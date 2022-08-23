@@ -1,4 +1,6 @@
 package population.abstracts;
 
-public abstract class Entity {
+import population.EntityInterface;
+
+public abstract class Entity implements EntityInterface {
 }

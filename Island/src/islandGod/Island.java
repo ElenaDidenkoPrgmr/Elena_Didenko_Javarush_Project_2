@@ -18,16 +18,16 @@ import java.util.*;
 import static islandGod.IslandUtility.getMaxInhabitant;
 
 public class Island {
-    int widthIsland = InitialApplication.getIntAppProperties("island.width");
-    int heightIsland = InitialApplication.getIntAppProperties("island.height");
+    private int widthIsland = InitialApplication.getIntAppProperties("island.width");
+    private int heightIsland = InitialApplication.getIntAppProperties("island.height");
 
-    public Map<Class<? extends Entity>, List<EntityInterface>>[][] mapsOnLocation = new HashMap[widthIsland + 2][heightIsland + 2];
+    private Map<Class<? extends Entity>, List<EntityInterface>>[][] mapsOnLocation = new HashMap[widthIsland + 2][heightIsland + 2];
     private final Set<Class> allClassesPopulation = populationProcessor.getAllClassesEntity();
 
     public Island() {
     }
 
-    public void initialIsland() throws IOException {
+    public void initialIsland(){
         for (int i = 1; i < widthIsland + 1; i++) {
             for (int j = 1; j < heightIsland + 1; j++) {
                 mapsOnLocation[i][j] = new HashMap<>();
@@ -122,7 +122,7 @@ public class Island {
                             int newX = i;
                             int newY = j;
 
-                            for (int l = 0; l < animal.move(); l++) {
+                            for (int l = 0; l < animal.getSpeed(); l++) {
                                 int potentialNewX = newX;
                                 int potentialNewY = newY;
                                 int course = new Random().nextInt(4);
@@ -218,7 +218,7 @@ public class Island {
         }
     }
 
-    private Entity getEatenEntity(AbstractAnimal animalThatEats, Map<Class<? extends Entity>, List<EntityInterface>> EntitiesOnLocation) {
+    private Entity getEatenEntity(AbstractAnimal animalThatEats, Map<Class<? extends Entity>, List<EntityInterface>> entitiesOnLocation) {
         ArrayList<PairEatenAndProbably> tableDinner = Eating.eatingMap.get(animalThatEats.getClass());
 
         int dinnerPoint = new Random().nextInt(tableDinner.size());
@@ -227,8 +227,8 @@ public class Island {
 
         int eatingProbability = new Random().nextInt(101);
         if (eatingProbability <= dinnerPointProbably) {
-            if (EntitiesOnLocation.get(dinnerPointClass).size() > 0) {
-                return (Entity) EntitiesOnLocation.get(dinnerPointClass).get(0);
+            if (entitiesOnLocation.get(dinnerPointClass).size() > 0) {
+                return (Entity) entitiesOnLocation.get(dinnerPointClass).get(0);
             }
         }
         return null;

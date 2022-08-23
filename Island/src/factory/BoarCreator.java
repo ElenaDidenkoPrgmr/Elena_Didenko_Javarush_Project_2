@@ -9,14 +9,14 @@ import java.io.IOException;
 public class BoarCreator extends Creator{
     private static BoarCreator instance;
 
-    private BoarCreator() {
-    }
-
     public static BoarCreator getInstance(){
         if(instance == null){
             instance = new BoarCreator();
         }
         return instance;
+    }
+
+    private BoarCreator() {
     }
 
     @Override

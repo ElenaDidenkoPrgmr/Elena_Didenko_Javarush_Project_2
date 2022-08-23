@@ -9,14 +9,14 @@ import java.io.IOException;
 public class HorseCreator extends Creator{
     private static HorseCreator instance;
 
-    private HorseCreator() {
-    }
-
     public static HorseCreator getInstance(){
         if(instance == null){
             instance = new HorseCreator();
         }
         return instance;
+    }
+
+    private HorseCreator() {
     }
 
     @Override

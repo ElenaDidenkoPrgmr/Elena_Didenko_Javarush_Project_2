@@ -9,14 +9,14 @@ import java.io.IOException;
 public class FoxCreator extends Creator{
     private static FoxCreator instance;
 
-    private FoxCreator() {
-    }
-
     public static FoxCreator getInstance(){
         if(instance == null){
             instance = new FoxCreator();
         }
         return instance;
+    }
+
+    private FoxCreator() {
     }
 
     @Override

@@ -10,10 +10,4 @@ import java.util.Locale;
 
 @Data
 public class Bull extends Herbivore implements Animal {
-
-    @Override
-    public int move() {
-        String maxPopulationPropertyName = (this.getClass().getSimpleName() + ".speed").toLowerCase(Locale.ROOT);
-        return  InitialApplication.getIntAppProperties(maxPopulationPropertyName);
-    }
 }

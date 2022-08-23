@@ -9,14 +9,14 @@ import java.io.IOException;
 public class DuckCreator extends Creator{
     private static DuckCreator instance;
 
-    private DuckCreator() {
-    }
-
     public static DuckCreator getInstance(){
         if(instance == null){
             instance = new DuckCreator();
         }
         return instance;
+    }
+
+    private DuckCreator() {
     }
 
     @Override

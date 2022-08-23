@@ -9,14 +9,14 @@ import java.io.IOException;
 public class BearCreator extends Creator{
     private static BearCreator instance;
 
-    private BearCreator() {
-    }
-
     public static BearCreator getInstance(){
         if(instance == null){
             instance = new BearCreator();
         }
         return instance;
+    }
+
+    private BearCreator() {
     }
 
     @Override

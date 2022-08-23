@@ -9,14 +9,14 @@ import java.io.IOException;
 public class WolfCreator extends Creator{
     private static WolfCreator instance;
 
-    private WolfCreator() {
-    }
-
     public static WolfCreator getInstance(){
         if(instance == null){
             instance = new WolfCreator();
         }
         return instance;
+    }
+
+    private WolfCreator() {
     }
 
     @Override

@@ -9,14 +9,14 @@ import java.io.IOException;
 public class BoaCreator extends Creator{
     private static BoaCreator instance;
 
-    private BoaCreator() {
-    }
-
     public static BoaCreator getInstance(){
         if(instance == null){
             instance = new BoaCreator();
         }
         return instance;
+    }
+
+    private BoaCreator() {
     }
 
     @Override

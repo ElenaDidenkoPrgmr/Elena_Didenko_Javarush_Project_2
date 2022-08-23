@@ -9,14 +9,14 @@ import java.io.IOException;
 public class SheepCreator extends Creator{
     private static SheepCreator instance;
 
-    private SheepCreator() {
-    }
-
     public static SheepCreator getInstance(){
         if(instance == null){
             instance = new SheepCreator();
         }
         return instance;
+    }
+
+    private SheepCreator() {
     }
 
     @Override

@@ -9,14 +9,14 @@ import java.io.IOException;
 public class CaterpillarCreator extends Creator{
     private static CaterpillarCreator instance;
 
-    private CaterpillarCreator() {
-    }
-
     public static CaterpillarCreator getInstance(){
         if(instance == null){
             instance = new CaterpillarCreator();
         }
         return instance;
+    }
+
+    private CaterpillarCreator() {
     }
 
     @Override

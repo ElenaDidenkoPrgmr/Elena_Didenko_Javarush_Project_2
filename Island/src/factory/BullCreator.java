@@ -10,14 +10,14 @@ public class BullCreator extends Creator{
 
     private static BullCreator instance;
 
-    private BullCreator() {
-    }
-
     public static BullCreator getInstance(){
         if(instance == null){
             instance = new BullCreator();
         }
         return instance;
+    }
+
+    private BullCreator() {
     }
 
     @Override

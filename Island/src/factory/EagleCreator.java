@@ -9,14 +9,14 @@ import java.io.IOException;
 public class EagleCreator extends Creator{
     private static EagleCreator instance;
 
-    private EagleCreator() {
-    }
-
     public static EagleCreator getInstance(){
         if(instance == null){
             instance = new EagleCreator();
         }
         return instance;
+    }
+
+    private EagleCreator() {
     }
 
     @Override

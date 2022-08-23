@@ -8,14 +8,14 @@ import java.io.IOException;
 public class VegetablesCreator extends Creator {
     private static VegetablesCreator instance;
 
-    private VegetablesCreator() {
-    }
-
     public static VegetablesCreator getInstance() {
         if (instance == null) {
             instance = new VegetablesCreator();
         }
         return instance;
+    }
+
+    private VegetablesCreator() {
     }
 
 

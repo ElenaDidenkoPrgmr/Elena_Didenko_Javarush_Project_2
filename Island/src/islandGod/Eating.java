@@ -2,6 +2,7 @@ package islandGod;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.json.JsonMapper;
+import lombok.Getter;
 import population.abstracts.Entity;
 
 import java.io.File;
@@ -18,30 +19,16 @@ public class Eating {
 
         try {
             //eatingMap = jsonMapper.readValue(fileFrom,HashMap.class);
-            eatingMap = jsonMapper.readValue(fileFrom,new TypeReference<HashMap<Class<?extends Entity>, ArrayList<PairEatenAndProbably>>>(){});
+            eatingMap = jsonMapper.readValue(fileFrom, new TypeReference<HashMap<Class<? extends Entity>, ArrayList<PairEatenAndProbably>>>() {
+            });
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
-    @Override
-    public String toString() {
-        return "Eating{" +
-                "eatingMap=" + eatingMap +
-                '}';
-    }
 }
 
+@Getter
 class PairEatenAndProbably {
-    private Class<?extends Entity> eaten;
+    private Class<? extends Entity> eaten;
     private Integer probably;
-
-    public Class<? extends Entity> getEaten() {
-        return eaten;
-    }
-
-    public Integer getProbably() {
-        return probably;
-    }
-
 }

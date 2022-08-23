@@ -8,14 +8,14 @@ import java.io.IOException;
 public class RabbitCreator extends Creator{
     private static RabbitCreator instance;
 
-    private RabbitCreator() {
-    }
-
     public static RabbitCreator getInstance(){
         if(instance == null){
             instance = new RabbitCreator();
         }
         return instance;
+    }
+
+    private RabbitCreator() {
     }
 
 
