@@ -1,0 +1,87 @@
+{
+  "population.carnivore.Wolf": [
+    {"eaten":"population.herbivore.Horse","probably": 10},
+    {"eaten":"population.herbivore.Deer","probably": 15},
+    {"eaten":"population.herbivore.Rabbit","probably": 60},
+    {"eaten":"population.herbivore.Mouse","probably": 80},
+    {"eaten":"population.herbivore.Goat","probably": 60},
+    {"eaten":"population.herbivore.Sheep","probably": 70},
+    {"eaten":"population.herbivore.Boar","probably": 15},
+    {"eaten":"population.herbivore.Bull","probably": 10},
+    {"eaten":"population.herbivore.Duck","probably": 40}
+  ],
+  "population.carnivore.Boa": [
+    {"eaten":"population.carnivore.Fox","probably": 15},
+    {"eaten":"population.herbivore.Rabbit","probably": 20},
+    {"eaten":"population.herbivore.Mouse","probably": 40},
+    {"eaten":"population.herbivore.Duck","probably": 10}
+  ],
+  "population.carnivore.Fox": [
+    {"eaten":"population.herbivore.Rabbit","probably": 70},
+    {"eaten":"population.herbivore.Mouse","probably": 90},
+    {"eaten":"population.herbivore.Duck","probably": 60},
+    {"eaten":"population.herbivore.Caterpillar","probably": 40}
+  ],
+  "population.carnivore.Bear": [
+    {"eaten":"population.carnivore.Boa","probably": 80},
+    {"eaten":"population.herbivore.Horse","probably": 40},
+    {"eaten":"population.herbivore.Deer","probably": 80},
+    {"eaten":"population.herbivore.Rabbit","probably": 80},
+    {"eaten":"population.herbivore.Mouse","probably": 90},
+    {"eaten":"population.herbivore.Goat","probably": 70},
+    {"eaten":"population.herbivore.Sheep","probably": 70},
+    {"eaten":"population.herbivore.Boar","probably": 50},
+    {"eaten":"population.herbivore.Bull","probably": 20},
+    {"eaten":"population.herbivore.Duck","probably": 10}
+  ],
+  "population.carnivore.Eagle": [
+    {"eaten":"population.carnivore.Fox","probably": 10},
+    {"eaten":"population.herbivore.Rabbit","probably": 90},
+    {"eaten":"population.herbivore.Mouse","probably": 90},
+    {"eaten":"population.herbivore.Duck","probably": 80}
+  ],
+  "population.herbivore.Horse": [
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ],
+  "population.herbivore.Deer": [
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ],
+  "population.herbivore.Rabbit": [
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ],
+  "population.herbivore.Mouse": [
+    {"eaten":"population.herbivore.Caterpillar","probably": 90},
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ],
+  "population.herbivore.Goat": [
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ],
+  "population.herbivore.Sheep": [
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ],
+  "population.herbivore.Boar": [
+    {"eaten":"population.herbivore.Mouse","probably": 50},
+    {"eaten":"population.herbivore.Caterpillar","probably": 90},
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ],
+  "population.herbivore.Bull": [
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ],
+  "population.herbivore.Duck": [
+    {"eaten":"population.herbivore.Caterpillar","probably": 90},
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ],
+  "population.herbivore.Caterpillar": [
+    {"eaten":"population.plants.Plants","probably": 100},
+    {"eaten":"population.plants.Vegetables","probably": 100}
+  ]
+}
